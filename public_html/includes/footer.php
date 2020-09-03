@@ -13,6 +13,7 @@
 	<div class="container">
 	  <div class="content has-text-centered">
 	    <p>&copy 2020 Spacedeck</p>
+      <a href="https://bulma.io/made-with-bulma" target="_blank"><img src="/assets/images/bulma.png" width="128" height="24"></a>
 	  </div>
 	</div>
 </footer>

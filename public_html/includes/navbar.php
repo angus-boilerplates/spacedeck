@@ -33,7 +33,7 @@ function isCurrentSR($pageName){
 ?>
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="#">
+    <a class="navbar-item" href="/">
       <img src="/assets/images/core/logo.svg" width="112" height="28">
     </a>
 
@@ -58,14 +58,14 @@ function isCurrentSR($pageName){
 
         <div class="navbar-dropdown">
           <a class="navbar-item">
-            Page 1
+            Example link 1
           </a>
           <a class="navbar-item">
-            Page 2
+            Example link 2
           </a>
           <hr class="navbar-divider">
           <a class="navbar-item">
-            Page 3
+            Example link 3
           </a>
         </div>
       </div>
@@ -80,9 +80,12 @@ function isCurrentSR($pageName){
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a class="button is-primary" target="_blank" href="https://github.com/angusgoody/spacedeck">
             <span class="icon"><i class="fab fa-github"></i></span>
             <span>GitHub</span>
+          </a>
+          <a class="button is-light" href="#">
+            <span>Login</span>
           </a>
         </div>
       </div>

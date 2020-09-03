@@ -15,28 +15,14 @@ include_once include_local_file("/includes/a_config.php");
   <? include_once include_local_file("/includes/navbar.php");?>
   <!-- Content -->
   <div id="wrapper">
-    <section class="hero is-light">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">
-            Welcome to Spacedeck
-          </h1>
-          <h2 class="subtitle">
-            A modern Bulma PHP boilerplate
-          </h2>
-        </div>
-      </div>
-    </section>
     <div class="container section">
-      <div class="has-text-centered">
-        <h3 class="title is-4">Button colours</h3>
-        <div class="buttons">
-          <button class="button is-primary">Primary</button>
-            <button class="button is-link">Link</button>
-          <button class="button is-info">Info</button>
-          <button class="button is-success">Success</button>
-          <button class="button is-warning">Warning</button>
-          <button class="button is-danger">Danger</button>
+      <div class="has-text-centered mb-5">
+        <h1 class="title is-1">A modern PHP boilerplate</h1>
+        <h3 class="subtitle">Spacedeck is a modern PHP boilerplate built using Bulma</h3>
+      </div>
+      <div class="columns is-centered is-mobile mt-5">
+        <div class="column is-4-desktop is-7-tablet is-6-mobile is-centered">
+          <img src="/assets/images/core/main.svg">
         </div>
       </div>
     </div>
