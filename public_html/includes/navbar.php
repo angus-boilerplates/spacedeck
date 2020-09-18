@@ -80,7 +80,7 @@ function isCurrentSR($pageName){
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" target="_blank" href="https://github.com/angusgoody/spacedeck">
+          <a class="button is-secondary" target="_blank" href="https://github.com/angusgoody/spacedeck">
             <span class="icon"><i class="fab fa-github"></i></span>
             <span>GitHub</span>
           </a>

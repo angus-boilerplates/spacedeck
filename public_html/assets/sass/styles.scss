@@ -1,3 +1,8 @@
+
+// 1. Import the initial variables
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/functions";
+
 // Set your brand colors
 $primary: #6AB81F;
 $link: #0088FF;
@@ -5,6 +10,19 @@ $info: #D855A8;
 $warning: #EFA821;
 $danger: #CE3E5D;
 $success: #18BF3F;
+
+//New colours
+$secondary: #C56EA2;
+$secondary-invert: findColorInvert($secondary);
+
+//Add new color variables to the color map.
+@import "../../node_modules/bulma/sass/utilities/derived-variables";
+$addColors: (
+  "secondary":($secondary, $secondary-invert),
+);
+$colors: map-merge($colors, $addColors);
+
+
 /*
 ####################################################
 B U L M A
@@ -47,4 +65,18 @@ body {
  
 #wrapper {
    flex: 1;
+}
+
+.equal-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.equal-height .card-content {
+  flex: auto;
+}
+.justify-text{
+  text-align: justify;
+  text-justify: inter-word;
 }
