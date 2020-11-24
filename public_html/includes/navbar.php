@@ -47,7 +47,7 @@ function isCurrentSR($pageName){
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <!--Home-->
-      <a class="navbar-item">
+      <a class="navbar-item" href="/">
         Home
       </a>
       <!--Pages-->
@@ -70,7 +70,7 @@ function isCurrentSR($pageName){
         </div>
       </div>
       <!--ABout page-->
-      <a class="navbar-item">
+      <a class="navbar-item" href="/about">
         About
       </a>
 
