@@ -42,7 +42,7 @@ if ($file_base != "index.php"){
 $PAGE_CANONICAL=$can_header.$_SERVER['SERVER_NAME'].$withoutExt;
 
 //Switch statement for pages
-switch ($first_parent) {
+switch ($full_path) {
 
 	//Home page
 	case '/index.php':
