@@ -32,22 +32,24 @@ function isCurrentSR($pageName){
 
 ?>
 <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!--Logo-->
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
       <img src="/assets/images/core/logo.svg" width="112" height="28">
     </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <!--Burger-->
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarSpace">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
+  <!--Links-->
+  <div id="navbarSpace" class="navbar-menu">
     <div class="navbar-start">
       <!--Home-->
-      <a class="navbar-item" href="/">
+      <a class="navbar-item <?isCurrent("index")?>" href="/">
         Home
       </a>
       <!--Pages-->
@@ -55,7 +57,6 @@ function isCurrentSR($pageName){
         <a class="navbar-link">
           Pages
         </a>
-
         <div class="navbar-dropdown">
           <a class="navbar-item">
             Example link 1
@@ -70,7 +71,7 @@ function isCurrentSR($pageName){
         </div>
       </div>
       <!--ABout page-->
-      <a class="navbar-item" href="/about">
+      <a class="navbar-item <?isCurrent("about")?>" href="/about">
         About
       </a>
 

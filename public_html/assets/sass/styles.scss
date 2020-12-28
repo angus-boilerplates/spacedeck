@@ -80,3 +80,20 @@ body {
   text-align: justify;
   text-justify: inter-word;
 }
+
+.navbar-menu .activeNavLink{
+  color: $primary !important;
+}
+
+/*
+//Only have the current screen indicator on non mobile
+@media only screen and (min-width: 1024px) {
+  .navbar-menu .navbar-item{
+    border-bottom: 2px solid white;
+  }
+  .navbar-menu .activeNavLink{
+    color: $primary !important;
+  }
+}
+*/
+
