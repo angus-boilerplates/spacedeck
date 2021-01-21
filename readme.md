@@ -17,22 +17,25 @@ What is contained inside the "Assets" folder
 - Precompiled CSS file
 - Images folder
 
+#### Views
+The Views folder contains the actual content to display on your site, it is split into two folders currently, 'util' and 'public', util contains common views such as error404 documents etc, whereas public contains all the views for the public side of your site. The views folder can be configured to work with your site and files in there can be accessed using the functions in global-functions.php
+
+
 #### Includes
-What is contained inside the "Includes" folder
+The includes folder contains, key bits of code such as configuration files, navigation bars etc, that belong on every page of your site. Inside the public folder in includes you will find...
 - a_config.php - control global variables etc
 - footer.php - a footer to display on every page of your website
 - footer-scripts.php - scripts to execute at the bottom of the page
-- forbidden403.php - page to display for a 403 error
-- forbidden404.php - page to display for a 404 error
 - navbar.php - Navigation bar to display accross your whole website
 - head-tags.php - All the head tags to display on most pages
 - static.php - All the head tags to display on EVERY page
 
 
 ### Htaccess file
-The template comes with a .htaccess file that will automatically hide the .php extension from the URL, it will also redirect 404 and 403 errors to the following files...
-- invalid404.php: The page could not be found
-- forbidden403: You do not have permission to access this page
+The htaccess file is setup to redirect all urls to /index.php which is setup to be the controller, all 404 and 403 errors will go through index.php where they will be processed accordingly. htaccess also removes php extensions from the URLS and trims trailing slashes.
+
+### Core Folder
+The core folder contains functions used by the whole site, it is also split into sub folders such as 'public' to make it easier to manage multiple subdomains. The global-functions.php file contains functions for accessing file paths for the site.
 
 ## Getting Started
 

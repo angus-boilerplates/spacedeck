@@ -1,11 +1,11 @@
-#Setup Status code pages
-ErrorDocument 404 /invalid404.php
-ErrorDocument 403 /forbidden403.php
-
 Options +FollowSymLinks -MultiViews
 # Turn mod_rewrite on
 RewriteEngine On
 RewriteBase /
+
+#Redirect 403 to Index as well 
+ErrorDocument 403 /
+
 
 ##Ensure trailing slashes are removed
 RewriteCond %{REQUEST_FILENAME} !-d

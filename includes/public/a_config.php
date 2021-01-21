@@ -28,21 +28,16 @@ $PAGE_DESCRIPTION="Welcome to Spacedeck";
 
 
 //Find the path of the current page
-$full_path = $_SERVER["PHP_SELF"];
-$first_parent = dirname($full_path);
-$file_base = basename($full_path);
+$request_url = $_SERVER['REQUEST_URI'];
+$first_parent = dirname($request_url);
+$file_base = basename($request_url);
 
 //Calculate Canonical
-$can_header="https://";
-if ($file_base != "index.php"){
-    $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $full_path); //Remove PHP extension
-}else{
-  $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $first_parent);
-}
-$PAGE_CANONICAL=$can_header.$_SERVER['SERVER_NAME'].$withoutExt;
+$trimmed = trim($request_url, ".php");
+$PAGE_CANONICAL = "space.local".rtrim($trimmed, '/') . '/'; //TODO update me when publish to your URL
 
 //Switch statement for pages
-switch ($full_path) {
+switch ($request_url) {
 
 	//Home page
 	case '/index.php':
