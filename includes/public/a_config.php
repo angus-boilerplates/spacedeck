@@ -40,7 +40,7 @@ $PAGE_CANONICAL = "space.local".rtrim($trimmed, '/') . '/'; //TODO update me whe
 switch ($request_url) {
 
 	//Home page
-	case '/index.php':
+	case '/':
 		$NAV_PAGE="index";
 		$CURRENT_PAGE="index";
 		$PAGE_TITLE="Home | Spacedeck";
@@ -48,7 +48,7 @@ switch ($request_url) {
 		break;
 
 	//About Page
-	case '/about.php':
+	case '/about':
 		$NAV_PAGE="about";
 		$CURRENT_PAGE="about";
 		$PAGE_TITLE="About | Spacedeck";

@@ -8,10 +8,6 @@ $path = ltrim($_SERVER['REQUEST_URI'], '/');    // Trim leading slash(es)
 $path=explode("?", $path)[0]; //Remove GET parameters
 $elements = preg_split('@/@', $path, NULL, PREG_SPLIT_NO_EMPTY);
 
-
-//Hard Code error documents
-echo "PATH IS: ".$path;
-
 //If nothing specified go home
 if(empty($elements)){
   include_once include_private_file("/views/public/home.php");
