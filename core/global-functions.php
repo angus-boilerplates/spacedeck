@@ -26,4 +26,9 @@ function include_local_file($path){
 	return ($_SERVER['DOCUMENT_ROOT'].$path);	
 }
 
+//Will return an include file
+function include_includeFile($path){
+  return dirname($_SERVER["DOCUMENT_ROOT"])."/includes".$path; 
+}
+
 

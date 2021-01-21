@@ -6,7 +6,7 @@
  */
 ?>
 <!--Footer-Scripts -->
-<?php include_once($_SERVER['DOCUMENT_ROOT']."/includes/footer-scripts.php");?>
+<?php include_once("footer-scripts.php");?>
 <!--Custom-Scripts -->
 <script src="/assets/scripts/global.js"></script>
 <footer class="footer">

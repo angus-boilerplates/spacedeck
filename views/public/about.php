@@ -2,17 +2,17 @@
 //Import the global functions
 include_once dirname($_SERVER["DOCUMENT_ROOT"])."/core/global-functions.php";
 //Import config file
-include_once include_local_file("/includes/a_config.php");
+include_once include_includeFile("/public/a_config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
   <!-- Head tags -->
-  <? include_once include_local_file("/includes/head-tags.php");?>
+  <? include_once include_includeFile("/public/head-tags.php");?>
 </head>
 <body>
   <!-- Navbar -->
-  <? include_once include_local_file("/includes/navbar.php");?>
+  <? include_once include_includeFile("/public/navbar.php");?>
   <!-- Content -->
   <div id="wrapper">
     <section class="hero is-light">
@@ -42,6 +42,6 @@ include_once include_local_file("/includes/a_config.php");
     </div>
   </div>
   <!-- Footer -->
-  <? include_once include_local_file("/includes/footer.php");?>
+  <? include_once include_includeFile("/public/footer.php");?>
 </body>
 </html>

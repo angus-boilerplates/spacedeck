@@ -1,33 +1,28 @@
 <?php
 //Import the global functions
 include_once dirname($_SERVER["DOCUMENT_ROOT"])."/core/global-functions.php";
-//Import config file
-include_once include_local_file("/includes/a_config.php");
+
+$error_file_location="/views/util/invalid404.php";
+$path = ltrim($_SERVER['REQUEST_URI'], '/');    // Trim leading slash(es)
+$path=explode("?", $path)[0]; //Remove GET parameters
+$elements = preg_split('@/@', $path, NULL, PREG_SPLIT_NO_EMPTY);
+
+//If nothing specified go home
+if(empty($elements)){
+  include_once include_private_file("/views/public/home.php");
+}
+else 
+switch(array_shift($elements))// Pop off first item and switch
+{
+
+  //About page
+  case 'about':
+    if (count($elements) > 0){include_once include_private_file($error_file_location);}else{include_once include_private_file("/views/public/about.php");}
+    break;
+
+  //Default - Go to error page
+  default:
+      include_once include_private_file($error_file_location);
+}
+
 ?>
-<!DOCTYPE html>
-<html lang="en" class="">
-<head>
-  <!-- Head tags -->
-  <? include_once include_local_file("/includes/head-tags.php");?>
-</head>
-<body>
-  <!-- Navbar -->
-  <? include_once include_local_file("/includes/navbar.php");?>
-  <!-- Content -->
-  <div id="wrapper">
-    <div class="container section">
-      <div class="has-text-centered mb-5">
-        <h1 class="title is-1">A modern PHP boilerplate</h1>
-        <h3 class="subtitle">Spacedeck is a modern PHP boilerplate built using Bulma</h3>
-      </div>
-      <div class="columns is-centered is-mobile mt-5">
-        <div class="column is-4-desktop is-7-tablet is-6-mobile is-centered">
-          <img src="/assets/images/core/main.svg">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Footer -->
-  <? include_once include_local_file("/includes/footer.php");?>
-</body>
-</html>
