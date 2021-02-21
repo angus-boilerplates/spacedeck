@@ -49,4 +49,4 @@ git clone https://github.com/angusgoody/spacedeck .
 ## Authors
 
 * **Angus Goody** - *Initial work* - https://github.com/angusgoody
-* **Dave Hollingworth"" - *MVC framework* - https://github.com/daveh
+* **Dave Hollingworth** - *MVC framework* - https://github.com/daveh
