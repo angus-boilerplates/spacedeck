@@ -1,14 +1,6 @@
 # Spacedeck PHP Boilerplate 🛸
 
-Spacedeck is a complete PHP boilerplate for creating modern websites, it includes support for multiple CSS frameworks and also allows you to access private server files easily with built in functions. Spacedecks features...
-
-#### Global Variables
-The a_config.php file can be customised to control each of these variables on page load...
-- Current Page
-- Navigation page
-- Canonical Tags
-- Page Title
-- Page Description
+Spacedeck is a modern PHP boilerplate, that is based on the MVC framework. It comes preinstalled with Bulma for front end css, JQUERY cdn and font awsome icons. Spacdeck comes with various classes and functions to help you get started on your next PHP project
 
 #### Assets
 What is contained inside the "Assets" folder
@@ -17,25 +9,20 @@ What is contained inside the "Assets" folder
 - Precompiled CSS file
 - Images folder
 
-#### Views
-The Views folder contains the actual content to display on your site, it is split into two folders currently, 'util' and 'public', util contains common views such as error404 documents etc, whereas public contains all the views for the public side of your site. The views folder can be configured to work with your site and files in there can be accessed using the functions in global-functions.php
+#### App Folder
+The App folder is where the majority of the MVC content will be, it contains four main folders...
+ - Config : contains files for configuring your website, such as database passwords etc
+ - Controllers: This is where your web controllers we be kept, handling request logic and rending the correct views
+ - Models : These are the files that will interact with your database and provide your site with data
+ - Views: This is where your PHP files are rendered and then served on the web
+
+#### Core Folder
+The core folder is where the core files of the sites fit. The parent classes for all controller, models and views. These are stored in a sub folder named "Base", The "Pages" folder helps seperate different databases in your site. For example you may have a public and private database and inheriting from the base model view will help seperate your code
 
 
-#### Includes
-The includes folder contains, key bits of code such as configuration files, navigation bars etc, that belong on every page of your site. Inside the public folder in includes you will find...
-- a_config.php - control global variables etc
-- footer.php - a footer to display on every page of your website
-- footer-scripts.php - scripts to execute at the bottom of the page
-- navbar.php - Navigation bar to display accross your whole website
-- head-tags.php - All the head tags to display on most pages
-- static.php - All the head tags to display on EVERY page
+### Public_HTML
+The webroot of the site. Includes an assets folder, htaccess file.
 
-
-### Htaccess file
-The htaccess file is setup to redirect all urls to /index.php which is setup to be the controller, all 404 and 403 errors will go through index.php where they will be processed accordingly. htaccess also removes php extensions from the URLS and trims trailing slashes.
-
-### Core Folder
-The core folder contains functions used by the whole site, it is also split into sub folders such as 'public' to make it easier to manage multiple subdomains. The global-functions.php file contains functions for accessing file paths for the site.
 
 ## Getting Started
 
@@ -62,3 +49,4 @@ git clone https://github.com/angusgoody/spacedeck .
 ## Authors
 
 * **Angus Goody** - *Initial work* - https://github.com/angusgoody
+* **Dave Hollingworth"" - *MVC framework* - https://github.com/daveh

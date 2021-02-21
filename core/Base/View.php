@@ -4,7 +4,7 @@
  * The View class
  * @author Angus goody
  * 14/02/21
- * Initial work - https://davehollingworth.net/phpmvcg
+ * Initial work - https://github.com/daveh/php-mvc
  */
 
 //Namespace and Usage

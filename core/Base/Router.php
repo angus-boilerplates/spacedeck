@@ -5,7 +5,6 @@
  * for parsing URLS
  * @author Angus Goody
  * 14/02/21
-
  * Initial work - https://github.com/daveh/php-mvc
  */
 
