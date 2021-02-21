@@ -1,38 +1,27 @@
 <?php
+/**
+ * Index.php for Spacedeck
+ * where the routing class will
+ * be used to dispatch a URL to the correct
+ * controller
+ */
+
 //Import the global functions
-include_once dirname($_SERVER["DOCUMENT_ROOT"])."/core/global-functions.php";
-//Import status codes
-$status_codes = include include_private_file("/private_data/status_codes.php");
-
-//Parse url
-$error_file_location="/views/util/invalid404.php";
-$path = ltrim($_SERVER['REQUEST_URI'], '/');    // Trim leading slash(es)
-$path=explode("?", $path)[0]; //Remove GET parameters
-$elements = preg_split('@/@', $path, NULL, PREG_SPLIT_NO_EMPTY);
-
-$web_status = $status_codes["status"] ?? 1; //Is website offline or online
-
-if($web_status == 0){
-  die("Website is currently offline");
-}else{
-  //If nothing specified go home
-  if(empty($elements)){
-    include_once include_private_file("/views/public/home.php");
-  }
-  else 
-  switch(array_shift($elements))// Pop off first item and switch
-  {
-
-    //About page
-    case 'about':
-      if (count($elements) > 0){include_once include_private_file($error_file_location);}else{include_once include_private_file("/views/public/about.php");}
-      break;
-
-    //Default - Go to error page
-    default:
-        include_once include_private_file($error_file_location);
-  }
-}
+include_once dirname($_SERVER["DOCUMENT_ROOT"])."/Core/global-functions.php";
 
 
-?>
+
+//Create a routing class
+$router = new Core\Base\Router();
+//Add error page
+$router->addErrorAction(["controller"=>"Error","action"=>"notFound","namespace"=>"Pub"]);
+
+
+// Add the general routes rules
+$router->add('', ['controller' => 'Home', 'action' => 'index','namespace' => 'Pub']); //No url
+$router->add('{controller}',['namespace' => 'Pub','action' => 'index']); //Just controller
+$router->add('{controller}/{action:\b(?!index\b)\w+}',['namespace' => 'Pub']); //Controller and an action (no index action) 
+
+
+//Dispatch this url
+$router->dispatch($_SERVER['QUERY_STRING']);

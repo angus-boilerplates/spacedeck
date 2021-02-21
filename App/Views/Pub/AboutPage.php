@@ -1,18 +1,21 @@
-<?php
-//Import the global functions
-include_once dirname($_SERVER["DOCUMENT_ROOT"])."/core/global-functions.php";
-//Import config file
-include_once include_includeFile("/public/a_config.php");
+<?
+/*
+ * Homepage
+ */
+$page = new Core\Pages\PublicPage();
+$page->add_title("About");
 ?>
+
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
   <!-- Head tags -->
-  <? include_once include_includeFile("/public/head-tags.php");?>
+  <? $page->get_head_tags();?>
+  <? include_once $page->get_static_tags();?>
 </head>
 <body>
-  <!-- Navbar -->
-  <? include_once include_includeFile("/public/navbar.php");?>
+<!-- Navbar -->
+<? include_once $page->get_navbar();?>
   <!-- Content -->
   <div id="wrapper">
     <section class="hero is-light">
@@ -42,6 +45,6 @@ include_once include_includeFile("/public/a_config.php");
     </div>
   </div>
   <!-- Footer -->
-  <? include_once include_includeFile("/public/footer.php");?>
+  <? include_once $page->get_footer()?>
 </body>
 </html>

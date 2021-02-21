@@ -5,31 +5,13 @@
  * the navbar for all pages
  */
 
-/*
- ===============
- This function adds the "currentNavItem"
- to the approprirate page ID, ensuring the active
- page is displayed on the navigation bar ie. has the green colour
- ===============
- */
-function isCurrent($pageName){
-	global $NAV_PAGE;
-	//If the global matches the argument set as current
-	if ($NAV_PAGE == $pageName){
-		echo "activeNavLink";
-	}
+
+//Will show the current page in a different colour
+function isCurrent($name){
+  if(basename(parse_url($_SERVER["REQUEST_URI"])["path"]) == $name){
+    echo "activeNavLink";
+  }
 }
-
-//Function to display Screenreader info
-function isCurrentSR($pageName){
-	global $NAV_PAGE;
-	//If the global matches the argument set as current
-	if ($NAV_PAGE == $pageName){
-		echo "<span class=\"sr-only\">(current)</span>";
-	}
-}
-
-
 ?>
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <!--Logo-->
@@ -49,7 +31,7 @@ function isCurrentSR($pageName){
   <div id="navbarSpace" class="navbar-menu">
     <div class="navbar-start">
       <!--Home-->
-      <a class="navbar-item <?isCurrent("index")?>" href="/">
+      <a class="navbar-item <?isCurrent("")?>" href="/">
         Home
       </a>
       <!--Pages-->

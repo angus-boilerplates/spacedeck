@@ -3,24 +3,12 @@ Options +FollowSymLinks -MultiViews
 RewriteEngine On
 RewriteBase /
 
-#Redirect 403 to Index as well 
-ErrorDocument 403 /
-
-
 ##Ensure trailing slashes are removed
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R]
 
-## hide .php extension
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
-RewriteRule ^ %1 [R,L,NC]
-
-## To internally redirect /dir/foo to /dir/foo.php
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^ %{REQUEST_URI}.php [L]
-
-##Ensure redirects
-RewriteRule ^index\.php$ - [L]
+#Redirects
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
