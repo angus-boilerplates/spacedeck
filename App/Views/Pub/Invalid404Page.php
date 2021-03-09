@@ -16,21 +16,25 @@ $page->add_title("Not Found");
 <body>
   <!-- Navbar -->
   <? include_once $page->get_navbar();?>
-  <!-- Top Section -->
-  <section class="hero is-warning">
+  <section class="hero is-white is-fullheight">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <section class="hero is-warning">
+        <div class="hero-body">
+          <p class="title is-1 mx-auto"> Oops :/ </p>
+        </div>
+      </section>
+    </div>  
+
+    <!-- Hero content: will be in the middle -->
     <div class="hero-body">
       <div class="container has-text-centered">
-        <h1 class="title is-1">
-          Oops :/
-        </h1>
+        <p class="title"> 404 - Page not found </p>
+        <p class="subtitle"> The page you are looking for does not exist </p>
+        <a href="/" class="button is-rounded is-primary">Home</a>
       </div>
     </div>
   </section>
-  <div id="wrapper" class="has-text-centered mt-5">
-    <h3 class="title is-3">404 - Page not found</h3>
-    <h2 class="subtitle is-6">The page you are looking for does not exist</h2>
-    <a href="/" class="button is-rounded is-primary">Home</a>
-  </div>
   <!-- Footer -->
   <? include_once $page->get_footer()?>
 </body>

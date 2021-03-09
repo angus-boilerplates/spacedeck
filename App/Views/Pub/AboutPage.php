@@ -18,20 +18,16 @@ $page->add_title("About");
 <? include_once $page->get_navbar();?>
   <!-- Content -->
   <div id="wrapper">
-    <section class="hero is-light">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">
-            Welcome to Spacedeck
-          </h1>
-          <h2 class="subtitle">
-            A modern Bulma PHP boilerplate
-          </h2>
-        </div>
-      </div>
-    </section>
     <div class="container section">
-      <div class="has-text-centered">
+      <!--Title and subtitle-->
+      <div class="has-text-centered mb-5 mt-3">
+        <h1 class="title is-size-1-tablet is-size-3">About</h1>
+        <h3 class="subtitle is-size-5-tablet is-size-6">Spacdeck about page</h3>
+        <hr>
+      </div>
+
+      <!--Button colours-->
+      <div class="">
         <h3 class="title is-4">Button colours</h3>
         <div class="buttons">
           <button class="button is-primary">Primary</button>
