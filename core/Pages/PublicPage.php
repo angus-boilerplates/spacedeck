@@ -9,29 +9,14 @@
 
 namespace Core\Pages;
 
-class PublicPage{
+class PublicPage extends \Core\Base\Page{
   
-  public $page_title = "Spacedeck";
-  public $page_desc = "Default description";
-  public $page_keywords = "Default, keywords, go, here";
+  //Override page attributes here
+  // protected $page_title_addition = "Spacedeck"; //What to add to title Page1 | Spacedeck
+  // public $page_title = "Spacedeck"; //Default is non added
+  // public $page_desc = "Default description";
+  // public $page_keywords = "keywords,here";  
 
-  
-  
-  /*
-   * Get the canonical of the current
-   * page
-   */
-  function get_canonical(){
-    echo get_public_prefix().$this->get_url();
-  }
-  
-  /*
-   * Get the URL of the current requested page
-   */
-  function get_url(){
-    return parse_url($_SERVER["REQUEST_URI"])["path"];
-  } 
-  
   /*
    * Get the static meta tags for the top of the page
    */
@@ -55,16 +40,7 @@ class PublicPage{
     <meta name='keywords' content='$keywods'>
     ";
   }
-  
-  /*
-   * Set the page title for a page, 
-   * also add the bar
-   */
-   
-  function add_title($title){
-    $this->page_title="$title | Spacedeck";
-  }
-  
+    
   /*
    * Get the public navbar to display at the top of the page.
    */
