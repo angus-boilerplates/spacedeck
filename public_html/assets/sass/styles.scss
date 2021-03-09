@@ -1,7 +1,7 @@
 
 // 1. Import the initial variables
-@import "../../node_modules/bulma/sass/utilities/initial-variables";
-@import "../../node_modules/bulma/sass/utilities/functions";
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/functions";
 
 // Set your brand colors
 $primary: #6AB81F;
@@ -16,7 +16,7 @@ $secondary: #C56EA2;
 $secondary-invert: findColorInvert($secondary);
 
 //Add new color variables to the color map.
-@import "../../node_modules/bulma/sass/utilities/derived-variables";
+@import "../node_modules/bulma/sass/utilities/derived-variables";
 $addColors: (
   "secondary":($secondary, $secondary-invert),
 );
@@ -28,7 +28,7 @@ $colors: map-merge($colors, $addColors);
 B U L M A
 ####################################################
 */
-@import "../../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma/bulma.sass";
 
 /*
 ####################################################
